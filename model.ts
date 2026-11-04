@@ -49,7 +49,6 @@ export function advanceTask(tasks: Task[], id: number): Task[] {
 export function countByStatus(tasks: Task[], status: TaskStatus): number {
   return tasks.filter((task: Task): boolean => task.status === status).length;
 }
-
 let demoTasks: Task[] = [];
 demoTasks = addTask(demoTasks, "Write typed task logic");
 demoTasks = addTask(demoTasks, "Check task status");
