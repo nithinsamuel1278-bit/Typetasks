@@ -49,14 +49,13 @@ export function advanceTask(tasks: Task[], id: number): Task[] {
 export function countByStatus(tasks: Task[], status: TaskStatus): number {
   return tasks.filter((task: Task): boolean => task.status === status).length;
 }
-let demoTasks: Task[] = [];
-demoTasks = addTask(demoTasks, "Write typed task logic");
-demoTasks = addTask(demoTasks, "Check task status");
-demoTasks = completeTask(demoTasks, 1);
-console.log("Tasks:", demoTasks);
-console.log('Todo tasks:', filterByStatus(demoTasks, "todo"));
+
+// Returns a new list without the task matching the provided id.
+export function deleteTask(tasks: Task[], id: number): Task[] {
+  return tasks.filter((task: Task): boolean => task.id !== id);
+}
 
 // Uncomment these lines to verify that TypeScript catches each type error:
 // const missingStatus: Task = { id: 3, title: "Missing status" };
 //const stringId: Task = { id: "3", title: "String id", status: "todo" };
-//filterByStatus(demoTasks, "finished");
+//filterByStatus([], "finished");
