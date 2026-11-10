@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TypeTasks</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <p class="eyebrow">A little structure for your day</p>
+        <h1>TypeTasks</h1>
+        <p class="intro">Make a list. Move one thing forward.</p>
+      </header>
+
+      <section class="task-panel" aria-label="Task tracker">
+        <div class="add-form">
+          <label class="sr-only" for="title">Task title</label>
+          <input id="title" type="text" placeholder="What needs doing?" />
+          <label class="sr-only" for="status">Starting status</label>
+          <select id="status">
+            <option value="todo">To do</option>
+            <option value="in-progress">In progress</option>
+            <option value="done">Done</option>
+          </select>
+          <button id="add" class="primary-button" type="button">Add task</button>
+        </div>
+
+        <div id="chips" class="filters" role="group" aria-label="Filter tasks"></div>
+        <ul id="list" class="task-list" aria-live="polite"></ul>
+      </section>
+    </main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
